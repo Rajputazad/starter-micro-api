@@ -14,7 +14,7 @@ app.use(express.json());
 const cors = require("cors");
 app.use(
   cors({
-    origin: ["technotechinfo.epizy.com/", "*"],
+    origin: ["technotechinfo.epizy.com/"],
     credentials: true,
   })
 );
