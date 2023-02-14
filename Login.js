@@ -120,7 +120,7 @@ module.exports = function (router) {
         );
         // save user token
         // res.cookie("token", token, { sameSite: "none", secure: true });
-        res.header('authorization', token);
+        // res.header('authorization', token);
         user.token = token;
         let userdata = await datas.findOne(user._id).select("-Password");
         userdatas = userdata;
