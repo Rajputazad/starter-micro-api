@@ -10,16 +10,16 @@ require("./Contact")(router);
 require("./Profile")(router);
 require("./PasswordReset")(router);
 require("./Webpages")(router);
+require("./app")(router);
 app.use(express.json());
 const cors = require("cors");
 app.use(
   cors({
-    origin: ["http://technotechinfo.epizy.com"],
+    origin: ["http://technotechinfo.epizy.com","http://fourspecialone.epizy.com"],
     credentials: true,
   })
 );
 app.use(function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "http://technotechinfo.epizy.com");
   res.header("Access-Control-Allow-Methods", "GET, POST, HEAD, OPTIONS, PUT, PATCH, DELETE");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, x-access-token, x-refresh-token, _id,authorization");
 
