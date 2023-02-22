@@ -10,7 +10,7 @@ require("./Contact")(router);
 require("./Profile")(router);
 require("./PasswordReset")(router);
 require("./Webpages")(router);
-require("./app")(router);
+// require("./app")(router);
 app.use(express.json());
 const cors = require("cors");
 app.use(
