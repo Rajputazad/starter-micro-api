@@ -64,6 +64,22 @@ router.delete("/ContactDelete/:_id",multer.any(),async(req,res)=>{
 }
 })
 
+	router.get("/ip",multer.any(),async(req,res)=>{
+	try {
+		let mac=await macaddress.one();
+		const ipAddress =  await IP.address();
+	let payload=await	satelize.satelize({ip:ipAddress},function(err,payload){
+			// if used with expressjs
+			res.json({ipAddress,mac,payload})
+		// res.send(payload);
+		// res.json...
+	});
+ 
+} catch (error) {
+	console.log(error);
+	res.json(error)
+}
+})
 
 
 
