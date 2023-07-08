@@ -14,7 +14,7 @@ app.use(express.json());
 const cors = require("cors");
 app.use(
   cors({
-    origin: ["http://technotechinfo.epizy.com","http://fourspecialone.epizy.com","http://localhost:3000","https://tame-blue-swordfish-tie.cyclic.app"],
+    origin: ["*","http://technotechinfo.epizy.com","http://fourspecialone.epizy.com","http://localhost:3000","https://tame-blue-swordfish-tie.cyclic.app"],
     credentials: true,
   })
 );
