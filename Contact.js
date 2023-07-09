@@ -19,7 +19,7 @@ module.exports = function (router) {
       const data = await datas(req.body);
 	  console.log(data)
       const result = await data.save();
-      res.status(200).json(result);
+      res.status(200).json({message:"Your info. successfully sent",data:result,success:true});
       console.log(result);
     } catch (error) {
       if (error.name === "ValidationError") {
