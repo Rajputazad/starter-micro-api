@@ -17,7 +17,7 @@ module.exports = function (router) {
   router.post("/receivecontact", multer.any(), async (req, res) => {
     try {
       const data = await datas(req.body);
-	  console.log(data)
+	//  console.log(data)
       const result = await data.save();
       res.status(200).json({message:"Your info. successfully sent",data:result,success:true});
       console.log(result);
