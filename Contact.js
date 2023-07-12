@@ -57,7 +57,7 @@ router.delete("/ContactDelete/:_id",multer.any(),async(req,res)=>{
     try {
 	console.log(req.params)
 	    let delcontact= await datas.findByIdAndDelete(req.params)
-	    res.status(200).json({message:"Deleted! ( ͡▀̿ ̿ ͜ʖ ͡▀̿ ̿ )",data:update,success:true});
+	    res.status(200).json({message:"Deleted! ( ͡▀̿ ̿ ͜ʖ ͡▀̿ ̿ )",success:true});
 	    console.log(delcontact);
     } catch (error) {
   console.log(error);
