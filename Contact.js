@@ -45,7 +45,7 @@ try {
 	}
 	else{
     console.log(update)
-		res.status(200).json({message:"Updated! ( ͡▀̿ ̿ ͜ʖ ͡▀̿ ̿ )",data:update,success:true});
+		res.status(200).json({message:"Updated! ( ͡▀̿ ̿ ͜ʖ ͡▀̿ ̿ )",success:true});
 	}
 } catch (error) {
   console.log(error)
