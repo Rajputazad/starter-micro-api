@@ -29,10 +29,10 @@ module.exports = function (router) {
           errors[key] = error.errors[key].message;
         });
 
-        return res.status(400).send(errors);
+        return res.status(400).json({message:errors,success:false});
       }
       console.log(error);
-      res.status(500).send("Something went wrong");
+      res.status(500).json({message:"Something went wrong",success:false});
     }
   });
 
@@ -45,11 +45,11 @@ try {
 	}
 	else{
     console.log(update)
-	  res.status(200).json("Updated! ( ͡▀̿ ̿ ͜ʖ ͡▀̿ ̿ )")
+		res.status(200).json({message:"Updated! ( ͡▀̿ ̿ ͜ʖ ͡▀̿ ̿ )",data:update,success:true});
 	}
 } catch (error) {
   console.log(error)
-  res.status(500).json("Something went wrong!")
+  res.status(500).json({message:"Something went wrong",success:false});
 }
 })
 
@@ -57,11 +57,11 @@ router.delete("/ContactDelete/:_id",multer.any(),async(req,res)=>{
     try {
 	console.log(req.params)
 	    let delcontact= await datas.findByIdAndDelete(req.params)
-		  res.status(200).json("Deleted! ( ͡▀̿ ̿ ͜ʖ ͡▀̿ ̿ )")
+	    res.status(200).json({message:"Deleted! ( ͡▀̿ ̿ ͜ʖ ͡▀̿ ̿ )",data:update,success:true});
 	    console.log(delcontact);
     } catch (error) {
   console.log(error);
-	
+	  res.status(500).json({message:"Something went wrong",success:false});
 }
 })
 
